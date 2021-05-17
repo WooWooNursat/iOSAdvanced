@@ -12,7 +12,7 @@ struct ProductInfoView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             if let image = viewModel.product.image {
-                RemoteImage(url: image)
+                RemoteImage(url: viewModel.getImage())
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center)
                     .background(Color.black)

@@ -48,16 +48,9 @@ struct ProfileView: View {
                                             .multilineTextAlignment(.trailing)
                                     }
                                     .border(Color.black, width: 1)
-                                    HStack {
-                                        Text("Email:")
-                                            .padding(.horizontal)
-                                            .font(.system(size: 14, weight: .regular))
-                                        Text(viewModel.email)
-                                            .padding(.horizontal)
-                                            .font(.system(size: 14, weight: .regular))
-                                            .multilineTextAlignment(.trailing)
-                                    }
-                                    .border(Color.black, width: 1)
+                                    
+                                Text(viewModel.email)
+                                    .font(.system(size: 14, weight: .regular))
                                 }
                             }
                         }

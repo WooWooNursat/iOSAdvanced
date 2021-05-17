@@ -29,6 +29,15 @@ class ProductInfoViewModel: ObservableObject {
         }
     }
     
+    func getImage() -> String {
+        let base_url = "http://192.168.251.43:8000"
+        if product.image!.contains(base_url) {
+            return product.image!
+        } else {
+            return base_url.appending(product.image!)
+        }
+    }
+    
     func saveContext() {
         do {
             try viewContext.save()

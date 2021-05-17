@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CatalogView: View {
     @ObservedObject var viewModel: CatalogViewModel
+    @ObservedObject var productService = ProductService.shared
     var body: some View {
         ZStack {
             NavigationView {
@@ -54,6 +55,9 @@ struct CatalogView: View {
         .onAppear {
             viewModel.getCategories()
         }
+        .onReceive(productService.$food, perform: { _ in
+            viewModel.getCategories()
+        })
     }
 }
 

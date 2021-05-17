@@ -20,7 +20,7 @@ class ProductService: ObservableObject {
     
     let base_url = "http://192.168.251.43:8000/"
     
-    var productType: ProductType = .wear
+    @Published var productType: ProductType = .wear
     @Published var wear: [Wear] = []
     @Published var food: [Food] = []
     @Published var cartProducts: [Product] = []
